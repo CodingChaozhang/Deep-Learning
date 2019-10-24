@@ -1,0 +1,156 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>demo</title>  
+<link href="./css/video-js.min.css" rel="stylesheet">
+<link href="./css/index.css" rel="stylesheet">
+<link href="./css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<script src="./js/jquery.js"></script>
+<script src="./js/video.min.js"></script>
+<!-- 引入的videojs-flash.js插件主要是为播放rtmp视频流-->
+<script src="./js/video-flash.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+</head>
+ 
+<body>
+    <div class="head">
+        <div class="head-input">
+            <input type="text" placeholder="搜索">
+            <div class="i">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="head-right">
+            <div class="text">退出</div>
+            <div class="i">
+                <i class="fa fa-power-off" aria-hidden="true"></i>
+            </div>
+                  
+        </div>
+
+        <div class="head-logo">
+            <div>
+<!--                <span class="G"></span>-->
+                <img src="./image/bai.png" style="width: 325px">
+                <!-- <span class="o">a</span>
+                <span class="oo">i</span>
+                <span class="G">e</span>
+                <span class="l">r</span> -->
+            </div>
+            <!-- <div style="font-family: 仿宋;font-weight: 700;font-size: 1.55em;">&nbsp;海尔</div> -->
+        </div>
+    </div>
+
+    <div class="navi">
+        <div class="tab tab1">
+            <div>
+                <i class="fa fa-camera-retro"></i>
+            </div>
+            <div class="table">
+                <div class="table-cell">
+                    <p>摄像机</p>
+                    <p>NO.1</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab tab2">
+            <div>
+                <i class="fa fa-warning"></i>
+            </div>
+            <div class="table">
+                <div class="table-cell">
+                    <p>警告</p>
+                    <p>5次</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="tab tab3">
+            <div>
+                <i class="fa fa-cog fa-fw"></i>
+            </div>
+            <div class="table">
+                <div class="table-cell">
+                    <p>处理总数</p>
+                    <p id="all">134个</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="tab tab4">
+            <div>
+                <i class="fa fa-podcast"></i>
+            </div>
+            <div class="table">
+                <div class="table-cell">
+                    <p>良品数</p>
+                    <p id="good_count">134个</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="tab tab5">
+            <div>
+                <i class="fa fa-clock-o"></i>
+            </div>
+            <div class="table">
+                <div class="table-cell">
+                    <p>设备运行时间</p>
+                    <p id="working_time">12min</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="video">       
+            <video id="myVideo" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="1080" height="708" data-setup='{}'> 
+                <source src="rtmp://localhost/hls/test"  type="application/flv">  
+            </video> 
+        </div>
+        <div class="chart-content">
+            <div style="background-color: #191919e3;border:1px solid transparent;border-radius: 5px;">
+                <div class="title">目标数据分析</div>
+                <div class="chart chart1" id="chart1"></div>
+            </div>
+            <!-- border-top:1px solid #8686863b; -->
+            <div style="margin-top:40px;overflow: hidden;padding-bottom: 44px;background-color: #191919e3;border:1px solid transparent;border-radius: 5px;">
+                <div class="title">实时监测</div>
+                <div style="width:40%;float:left;">
+                    <div class=" chart chart2" id="chart2">
+                        <div class="chart2-label">
+                            95%
+                        </div>
+                    </div>
+                    <div class="title1">合格率</div>
+                </div>
+                
+                <div style="width:60%;float:left;">
+                    <div class=" chart chart3" id="chart3"></div>
+                    <div class="title1">噪声检测</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script> 
+var player = videojs('myVideo', {}, function(){console.log('videojs播放器初始化成功')})
+// player.play();
+</script>
+
+<script src="./js/index.js"></script>
+</body>  
+</html> 
