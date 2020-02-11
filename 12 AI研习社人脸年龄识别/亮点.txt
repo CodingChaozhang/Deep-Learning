@@ -1,0 +1,11 @@
+ - DenseNet121模型 VGGFace模型
+
+ - label smooth策略；
+
+ - 模型融合策略；
+
+ - 分阶段解决问题 以及 loss值相加
+
+ - 数据增强 GAMMA矫正生成增强数据
+
+ - 先用ADAM收敛，再用SGD再次训练
