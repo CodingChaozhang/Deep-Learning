@@ -1,7 +1,7 @@
 # Bert-Text-Classification
 
-![csdn](https://blog.csdn.net/Mind_programmonkey)
-![github](https://github.com/CodingChaozhang)
+[csdn](https://blog.csdn.net/Mind_programmonkey)
+[github](https://github.com/CodingChaozhang)
 
 Bert的Keras版本实现文本分类
 
